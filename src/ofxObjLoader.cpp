@@ -221,7 +221,7 @@ void save(string path, const ofMesh& mesh_, bool flipFace, bool flipNormals, boo
 	{
 		m->numnormals = mesh.getNumNormals();
 		m->normals = new GLfloat[(m->numnormals + 1) * 3];
-		vector<ofVec3f> normals = mesh.getNormals();
+		vector<glm::vec3> normals = mesh.getNormals();
 		
 		if (flipNormals)
 			for (int i = 0; i < normals.size(); i++)
@@ -389,7 +389,7 @@ void saveGroup(string path, const vector<ofMesh> & meshGroup, bool flipFace, boo
         
         if(numOfNormalsTotal > 0) {
             numOfNormals = mesh.getNumNormals();
-            vector<ofVec3f> normals = mesh.getNormals();
+            vector<glm::vec3> normals = mesh.getNormals();
             
             if(flipNormals) {
                 for(int i = 0; i < normals.size(); i++) {
